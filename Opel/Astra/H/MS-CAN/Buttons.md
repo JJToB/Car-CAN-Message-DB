@@ -1,6 +1,7 @@
 
 
 ## Radio buttons
+##### Tested for CD70 and DVD90
 
 | Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
 | ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
