@@ -1,10 +1,16 @@
 
 
-| Address | Data | Function | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
-| ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- |
-**Radio buttons**
-| `02 01` | `00 31 00` | Released | 0=Release | Button-ID | Static 0 | - | - | - |
-| `02 01` | `01 31 00` | ressed | 1=Press | Button-ID | Increments when hold | - | - | - |
-| **Steering wheel buttons** ||
-| `02 06` | `00 91 00` | Released | 0=Release | Button-ID | Static 0 | - | - | - |
-| `02 06` | `01 91 00` | Pressed | 1=Press | Button-ID | Increments when hold | - | - | - |
+##Radio buttons
+
+| Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
+| ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| `201` | `00:31:00` | release | *0x00* | Button-ID | Hold Time | - | - | - | - | - |
+| `201` | `01:31:00` | press | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
+| `201` | `08:6A:00` | knob turn | *0x08* | *0x6A* | Turn-Direction | - | - | - | - | - |
+
+##Steering wheel buttons
+
+| Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
+| ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| `206` | `00:91:00` | release | *0x00* | Button-ID | Hold Time | - | - | - | - | - |
+| `206` | `01:91:00` | presse | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
