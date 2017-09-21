@@ -23,6 +23,15 @@
 | `0xE0` | FM or CD |
 | `0xFF` | Settings |
 
+##### Tested for CD70 and DVD90
+
+| Button-ID | Button Description |
+| --------- | ------------------ |
+| `0x30` | Num 0 |
+| `0x31` | Num 1 |
+| `...` | ... |
+| `0x39`| Num 9
+
 ## Steering wheel buttons
 
 | Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
