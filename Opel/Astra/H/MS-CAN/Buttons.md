@@ -38,3 +38,16 @@
 | ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | `206` | `00:91:00` | release | *0x00* | Button-ID | Hold Time | - | - | - | - | - |
 | `206` | `01:91:00` | presse | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
+| `206` | `08:91:00` | knob turn | *0x08* | Button-ID | *0x01* - UP, *0xFF* - DOWN | - | - | - | - | - |
+
+## Button-IDs
+
+| Button-ID | Button Description |
+| --------- | ------------------ |
+| `0x81` | Left Up Button |
+| `0x82` | Left Down Button |
+| `0x83` | Left Knob |
+| `0x83` | Left Knob Button|
+| `0x91` | Right Up Button (Next) |
+| `0x92` | Right Down Button (Prev) |
+| `0x93` | Right Knob (Volume) |
