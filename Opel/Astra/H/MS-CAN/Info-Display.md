@@ -9,6 +9,7 @@ The datablock itself contains of a two Byte Command, one Byte payload size, one 
 - Characters as UTF-16²
 
 ¹ The message type describes what kind of Information is send (Main Screen, Menu, Infobox, AC, ...)
+
 ² The UTF-16 Support is very limited. The only extended chars I discovered are 0x2780-0x2788 for &#x2780;-&#x2788;  
 
 
@@ -63,8 +64,12 @@ And this are the Specific IDs for each message type:
 | `09` | `33` | Current location (Road name)|
 | ---- | ---- | -------------|
 | `0A` | `23` | AC temperature |
-| `0A` | `25` | AC airflow mode |
-| `0A` | `26` | AC fan level |
+| `0A` | `24` | AC Position² |
+| `0A` | `25` | AC mode ("ECO" or empty) |
+| `0A` | `26` | AC fan level³ |
 
 ¹Only sent after "Info" button pressed
 
+²Special-Chars 0xE051 to 0xE057 are position arrows. The Seat-Icon appers if automatically if one special char is sent.
+
+³The FAN-Icons is the special char 0xE050
