@@ -10,10 +10,12 @@ Functions are coded by bits, so use bit operations.
 
 | Function | Byte1  | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
 | -------- | -----  | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| Far lights blink   | 0x08 | |  |  |  |  |  |  |
-| Far lights toggle  | 0x20 | |  |  |  |  |  |  |
+| Far lights pull    | 0x08 | |  |  |  |  |  |  |
+| Far lights push    | 0x20 | |  |  |  |  |  |  |
 | glass wash OFF     |  | 0x00 |  |  |  |  |  |  |
 | glass wash down    |  | 0x10 |  |  |  |  |  |  |
+| glass wash push    |  | 0x?? |  |  |  |  |  |  |
+| glass wash pull    |  | 0x?? |  |  |  |  |  |  |
 | glass wash speed1  |  | 0xA0 |  |  |  |  |  |  |
 | glass wash speed2  |  | 0xB0 |  |  |  |  |  |  |
 | glass wash speed3  |  | 0xD0 |  |  |  |  |  |  |
