@@ -26,6 +26,7 @@ Functions are coded by bits, so use bit operations.
 | volume UP          |  |  |  |  |  | 0x01 |  | 0x01 |
 | volume DOWN        |  |  |  |  |  | 0x02 |  | 0x1F |
 | next / forward     |  |  |  |  |  | 0x04 |  |  |
+| prev / backward    |  |  |  |  |  | 0x05 |  |  |
 | left knob up       |  |  |  |  |  | 0x10 | 0x1F |  |
 | left knob down     |  |  |  |  |  | 0x20 | 0x01 |  |
 | left knob press    |  |  |  |  |  | 0x30 |  |  |
