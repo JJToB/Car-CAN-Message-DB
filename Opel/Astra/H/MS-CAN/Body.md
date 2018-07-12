@@ -16,7 +16,7 @@
 
 | Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
 | ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| `4E8` | `46:0F:0C:50:19:0A:02` | Motion | *0x46* | ?? | 14b:RPM | <- | 9b:Km/h | <- | Direction¹ | - |
+| `4E8` | `46:0F:0C:50:19:0A:02` | Motion | *0x46* | ?? | RPM | RPM | Speed | ? | Direction¹ | - |
 | `4EC` | `46:07:3C:29:00` | Engine Temp | *0x46* | IGN 00/07 | -40=°C | ?? | - | - | - | - |
 | `4ED` | `46:02:41:43` | Fuel Injection | *0x46* | IGN² | 2B Injections³ | <- | - | - | - | - |
 | `4EE` | `46:03:05:06` | Range | *0x46* | Low-range⁴ | 2B\*0.5=km Range | <- | - | - | - | - |
