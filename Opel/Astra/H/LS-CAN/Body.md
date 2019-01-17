@@ -10,4 +10,5 @@
 | `445` | `00:73` | Voltage | *0x00* | **Voltage / 8** |
 | `500` | `00:5C` | Outdoor Temp | ? Most: 0x00 | **Out. Temp (°C/2-40)** |
 | `530` | `11:11:34:34:38:3A:28:29` | TPMS | State F | State R | **Bar FL** | **Bar FR** | **Bar RL** | **Bar RR** | 0x28=OK | 0x29=ON |
+                                                                                                         
 ¹ 0x13 = Standing, 0x23 = Driving
