@@ -74,12 +74,12 @@ This messages is sent when the bus is offline and will wake up all attached devi
 ## 0x108 Speed and RPM
 This are some data from the engine  
 *Byte 1*: Unknown, 10 different values are seen here.  
-*Byte 2+3*: Speed (Divide by 128)  
+*Byte 2+3*: Speed (Divide _by 128_)  
 *Byte 4*: Always `0x00`  
 *Byte 5+6*: RPM  
 *Byte 6+7*: Always `0x00`   
 Example: `23:20:98:00:04:E5:00:00`  
-Speed: **0x2098** = 8344 / 128 = **65.1875 km/h**  
+Speed: **0x2098** = 8344 / _128_ = **65.1875 km/h**  
 RPM: **0x04E5** = **1253 rpm**  
 
 ## 0x110 Distance traveled
@@ -87,19 +87,19 @@ Traveled distance per driven wheel, incrementing
 *Byte 1*: Unknown, 4 differen values are seen  
 *Byte 2+3*: Traveled Distance for front left wheel  
 *Byte 4+5*: Traveled Distance for front right wheel  
-One increment is 1.5748 cm  
+One increment is _1.5748 cm_  
 Example: `00:B4:92:B4:14`  
-Left: **0xB492** = 46226 * 1.5748 = 72796.7048 cm = **727.96 m**  
-Right: **0xB414** = 46100 * 1.5748 = 72598.2800 cm = **725.98 m**  
+Left: **0xB492** = 46226 * _1.5748_ = 72796.7048 cm = **727.96 m**  
+Right: **0xB414** = 46100 * _1.5748_ = 72598.2800 cm = **725.98 m**  
 A full cycle of the 16 bit integer are 1032 m.    
 
 ## 0x130 Fuel injection
 *Byte 1*: Unknown, 4 differen values are seen  
 *Byte 2+3*: Increments every fuel injection  
 *Byte 4-7*: Always `0x00`  
-At my 1.6l Engine, one increment is 0.03054 ml  
+At my 1.6l Engine, one increment is _0.03054 ml_  
 Example: `00:13:A6:00:00:00:00`  
-Injected: **0x13A6** = 5030 * 0.03054 = **153,62 ml**  
+Injected: **0x13A6** = 5030 * _0.03054_ = **153,62 ml**  
 A full cycle of the 16 bit integer are about 2 liters.  
 
 ## 0x175 Colums Switches
