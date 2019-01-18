@@ -9,10 +9,10 @@
 | `090` | `00:00:71:00:00:00` | ??? | *0x00* | *0x00* | ? (2) | *0x00* | *0x00* | *0x00* |
 | **`100`** |  | **Bus Wakeup** |
 | **`108`** | **`23:20:98:00:04:E5:00:00`** | **Speed/RPM** | ? (10) | **Speed** | **Speed** | *0x00* | **RPM** | **RPM** | *0x00* | *0x00* |
-| `110` | `00:B4:92:B4:14` | ??? | ? (4) | ? (256) | ? (128) | ? (256) | ? (128) |
+| **`110`** | **`00:B4:92:B4:14`** | Distance Traveled | ? (4) | **Wheel FL** | **Wheel FL** | **Wheel FR** | **Wheel FR** |
 | `115` | `0E` | Break Switch or Light | ? (9) |
 | `11A` | `C0:00:40:80:01:00:00` | ??? | *0xC0* | *0x00* | *0x40* | ? (2) | *0x01* | *0x00* | *0x00* |
-| `130` | `00:13:A6:00:00:00:00` | ??? | ? (4) | ? (256) | ? (256) | *0x00* | *0x00* | *0x00* | *0x00* |
+| **`130`** | **`00:13:A6:00:00:00:00`** | Fuel Injection | ? (4) | **Fuel** | **Fuel** | *0x00* | *0x00* | *0x00* | *0x00* |
 | `135` | `3C:06:61:D0` | ??? | ? (3) | ? (2) | *0x61* | *0xD0* |
 | `145` | `20:00:01:28:00:04:00:00` | Engine | Normal, 0x40 / 0x60 = During engine start | Off, Engine Start: 0x80, 0x81 then 0x01 until engine off | ? 0x10=Run, 0x01=Off | **Coolant** | ? 0xA0=Run,0x00=Off  | *0x04* | *0x00* | *0x00* |
 | `155` | `00:20` | ??? | *0x00* | ? (18) |
@@ -75,12 +75,32 @@ This messages is sent when the bus is offline and will wake up all attached devi
 This are some data from the engine  
 *Byte 1*: Unknown, 10 different values are seen here.  
 *Byte 2+3*: Speed (Divide by 128)  
-*Byte 4*: Always 0x00  
+*Byte 4*: Always `0x00`  
 *Byte 5+6*: RPM  
-*Byte 6+7*: Always 0x00  
+*Byte 6+7*: Always `0x00`   
 Example: `23:20:98:00:04:E5:00:00`  
 Speed: **0x2098** = 8344 / 128 = **65.1875 km/h**  
 RPM: **0x04E5** = **1253 rpm**  
+
+## 0x110 Distance iraveled
+Traveled distance per driven wheel, incrementing  
+*Byte 1*: Unknown, 4 differen values are seen  
+*Byte 2+3*: Traveled Distance for front left wheel  
+*Byte 4+5*: Traveled Distance for front right wheel  
+One increment is 1.5748 cm  
+Example: `00:B4:92:B4:14`  
+Left: **0xB492** = 46226 * 1.5748 = 72796.7048 cm = **727.96 m**  
+Right: **0xB414** = 46100 * 1.5748 = 72598.2800 cm = **725.98 m**  
+A full cycle of the 16 bit integer are 1032 m.    
+
+## 0x130 Fuel injection
+*Byte 1*: Unknown, 4 differen values are seen  
+*Byte 2+3*: Increments every fuel injection  
+*Byte 4-7*: Always `0x00`  
+At my 1.6l Engine, one increment is 0.03054 ml  
+Example: `00:13:A6:00:00:00:00`  
+Injected: **0x13A6** = 5030 * 0.03054 = 153,62 ml  
+A full cycle of the 16 bit integer are about 2 liters.  
 
 ## 0x175 Colums Switches
 *Byte 1,2,4,5,7,8*: No other values than 0x00 seen so far.  
