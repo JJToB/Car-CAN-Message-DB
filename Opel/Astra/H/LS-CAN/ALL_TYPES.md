@@ -8,7 +8,7 @@
 | `068` | `01:20:61:D0:00:00` | ??? | *0x01* | *0x20* | *0x61* | *0xD0* | *0x00* | *0x00* |
 | `090` | `00:00:71:00:00:00` | ??? | *0x00* | *0x00* | ? (2) | *0x00* | *0x00* | ? (2) |
 | **`100`** |  | **Bus Wakeup** |
-| **`108`** | **`23:20:98:00:04:E5:00:00`** | **Speed/RPM** | ? (10) | **Speed** | **Speed** | *0x00* | **RPM** | **RPM** | *0x00* | ? (2) |
+| **`108`** | **`23:20:98:00:04:E5:00:00`** | **Speed/RPM** | ? (10) | **Speed** | **Speed** | *0x00* | **RPM** | **RPM** | *0x00* | *0x00* |
 | `110` | `00:B4:92:B4:14` | ??? | ? (4) | ? (256) | ? (128) | ? (256) | ? (256) |
 | `115` | `0E` | Break Switch or Light | ? (11) |
 | `11A` | `C0:00:40:80:01:00:00` | ??? | *0xC0* | *0x00* | *0x40* | ? (2) | *0x01* | *0x00* | ? (2) |
@@ -63,5 +63,38 @@
 
 
 *Italic* Values seam to bee fixed as no other values then the stated ones where ever seen. This could also be a fault indicator which never triggerd in my car.
-**Bolt** Values are already identified and explained on the specific page.
+**Bold** Values are already identified and explained on the specific page. Bold IDs are explained in detail below.
 The parenthesized values are the amount of different values seen.
+
+
+## 0x100
+This messages is sent when the bus is offline and will wake up all attached devices
+
+## 0x108 
+This are some data from the engine
+Byte 1: Unknown, 10 different values are seen here.
+Byte 2+3: Speed (Divide by 128)
+Byte 4: Always 0x00
+Byte 5+6: RPM
+Byte 6+7: Always 0x00
+Example: `23:20:98:00:04:E5:00:00`
+Speed: 0x2098 = 8344 / 128 = 65.1875 km/h
+RPM: 0x04E5 = 1253 rpm
+
+## 0x175
+Byte 1,2,4,5,7,8: No other values than 0x00 seen so far.
+Byte 3: Indicator Switch:
+  0x01: Left half pressed
+  0x02: Right half pressed
+  0x03: Left full pressed
+  0x04: Right full pressed
+Byte 6: Whiper control  
+
+## 0x260
+Seams to be indicator control
+
+| `0x00` | `0x00`| `0x00` | Indicators off (Sent twice when indicator is turned off) |
+| `0x25` | `0x43`| `0x7F` | Indicate left (Sent every time the indicator lights up) |
+| `0x3A` | `0x43`| `0x7F` | Indicate right (Sent every time the indicator lights up) |
+| `0x5F` | `0x32`| `0x7F` | Flash Hazard Lights (Sent once when locking the car) |
+| `0x7F` | `0x32`| `0x7F` | Flash Hazard Lights twice (Sent once when unlocking the car) |
