@@ -68,36 +68,36 @@ This could also be a fault indicator which never triggerd in my car.
 The parenthesized values are the amount of different values seen.  
 
 
-## 0x100
+## 0x100 Wake up Bus
 This messages is sent when the bus is offline and will wake up all attached devices  
 
-## 0x108 
+## 0x108 Speed and RPM
 This are some data from the engine  
-Byte 1: Unknown, 10 different values are seen here.  
-Byte 2+3: Speed (Divide by 128)  
-Byte 4: Always 0x00  
-Byte 5+6: RPM  
-Byte 6+7: Always 0x00  
+*Byte 1*: Unknown, 10 different values are seen here.  
+*Byte 2+3*: Speed (Divide by 128)  
+*Byte 4*: Always 0x00  
+*Byte 5+6*: RPM  
+*Byte 6+7*: Always 0x00  
 Example: `23:20:98:00:04:E5:00:00`  
-Speed: 0x2098 = 8344 / 128 = 65.1875 km/h  
-RPM: 0x04E5 = 1253 rpm  
+Speed: **0x2098** = 8344 / 128 = **65.1875 km/h**  
+RPM: **0x04E5** = **1253 rpm**  
 
-## 0x175
-Byte 1,2,4,5,7,8: No other values than 0x00 seen so far.  
-Byte 3: Indicator Switch:  
-   0x01: Left half pressed  
-   0x02: Right half pressed  
-   0x03: Left full pressed  
-   0x04: Right full pressed  
-Byte 6: Whiper control  
+## 0x175 Colums Switches
+*Byte 1,2,4,5,7,8*: No other values than 0x00 seen so far.  
+*Byte 3*: Left column switch (Turn signal):  
+   `0x01`: half pressed down  
+   `0x02`: half pressed up  
+   `0x03`: fully pressed  down  
+   `0x04`: fully pressed up  
+*Byte 6*: Right columns switch (Whiper control):  
 
 ## 0x260
-Seams to be indicator control  
+Seams to be TurnSignal control  
 
 | Byte1 | Byte2 | Byte3 | Meaning |
 | --- | --- | --- | --- |
-| `0x00` | `0x00`| `0x00` | Indicators off (Sent twice when indicator is turned off) |
-| `0x25` | `0x43`| `0x7F` | Indicate left (Sent every time the indicator lights up) |
-| `0x3A` | `0x43`| `0x7F` | Indicate right (Sent every time the indicator lights up) |
-| `0x5F` | `0x32`| `0x7F` | Flash Hazard Lights (Sent once when locking the car) |
-| `0x7F` | `0x32`| `0x7F` | Flash Hazard Lights twice (Sent once when unlocking the car) |
+| `0x00` | `0x00`| `0x00` | Turn signals off (Sent twice when indicator is turned off) |
+| `0x25` | `0x43`| `0x7F` | Left turn signal (Sent every time the indicator lights up) |
+| `0x3A` | `0x43`| `0x7F` | Right turn signal (Sent every time the indicator lights up) |
+| `0x5F` | `0x32`| `0x7F` | Flash hazard lights (Sent once when locking the car) |
+| `0x7F` | `0x32`| `0x7F` | Flash hazard lights twice (Sent once when unlocking the car) |
