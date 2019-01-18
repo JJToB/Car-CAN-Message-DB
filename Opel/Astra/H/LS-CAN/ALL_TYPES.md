@@ -82,7 +82,7 @@ Example: `23:20:98:00:04:E5:00:00`
 Speed: **0x2098** = 8344 / 128 = **65.1875 km/h**  
 RPM: **0x04E5** = **1253 rpm**  
 
-## 0x110 Distance iraveled
+## 0x110 Distance traveled
 Traveled distance per driven wheel, incrementing  
 *Byte 1*: Unknown, 4 differen values are seen  
 *Byte 2+3*: Traveled Distance for front left wheel  
@@ -99,7 +99,7 @@ A full cycle of the 16 bit integer are 1032 m.
 *Byte 4-7*: Always `0x00`  
 At my 1.6l Engine, one increment is 0.03054 ml  
 Example: `00:13:A6:00:00:00:00`  
-Injected: **0x13A6** = 5030 * 0.03054 = 153,62 ml  
+Injected: **0x13A6** = 5030 * 0.03054 = **153,62 ml**  
 A full cycle of the 16 bit integer are about 2 liters.  
 
 ## 0x175 Colums Switches
