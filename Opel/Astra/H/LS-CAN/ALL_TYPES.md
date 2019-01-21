@@ -67,8 +67,10 @@ This could also be a fault indicator which never triggerd in my car.
 The parenthesized values are the amount of different values seen.  
 
 
+
 ## 0x100 Wake up Bus
 This messages is sent when the bus is offline and will wake up all attached devices  
+
 
 ## 0x108 Speed and RPM
 This are some data from the engine  
@@ -81,6 +83,7 @@ Example: `23:20:98:00:04:E5:00:00`
 Speed: **0x2098** = 8344 / _128_ = **65.1875 km/h**  
 RPM: **0x04E5** = **1253 rpm**  
 
+
 ## 0x110 Distance traveled
 Traveled distance per driven wheel, incrementing  
 *Byte 1*: Unknown, 4 differen values are seen  
@@ -92,6 +95,7 @@ Left: **0xB492** = 46226 * _1.5748_ = 72796.7048 cm = **727.96 m**
 Right: **0xB414** = 46100 * _1.5748_ = 72598.2800 cm = **725.98 m**  
 A full cycle of the 16 bit integer are 1032 m.    
 
+
 ## 0x130 Fuel injection
 *Byte 1*: Unknown, 4 differen values are seen  
 *Byte 2+3*: Increments every fuel injection  
@@ -100,6 +104,7 @@ At my 1.6l Engine, one increment is _0.03054 ml_
 Example: `00:13:A6:00:00:00:00`  
 Injected: **0x13A6** = 5030 * _0.03054_ = **153,62 ml**  
 A full cycle of the 16 bit integer are about 2 liters.  
+
 
 ## 0x145 Engine Data
 Byte 1:  
@@ -128,8 +133,9 @@ Byte 7+8: Always `0x00`
 Example: `20:00:01:26:00:04:00:00`  
 Coolant: **0x28** = 38 - _40_ = **-2 °C**  
 
+
 ## 0x175 Colums Switches
-*Byte 1,2,4,5,7,8*: No other values than 0x00 seen so far.  
+*Byte 1,2,4,5,7,8*: No other values than `0x00` seen so far.  
 *Byte 3*: Left column switch (Turn signal):  
 * `0x01`: half pressed down  
 * `0x02`: half pressed up  
@@ -137,6 +143,12 @@ Coolant: **0x28** = 38 - _40_ = **-2 °C**
 * `0x04`: fully pressed up  
 
 *Byte 6*: Right columns switch (Whiper control):  
+
+
+## 0x235 LED Brightness
+*Byte 1*: Always `0x00`  
+*Byte 2*: LED Brightness from 0x01 to 0xFF. 0x00 is off / day mode (Instrument at full Brightness)  
+
 
 ## 0x260
 Seams to be TurnSignal control  
