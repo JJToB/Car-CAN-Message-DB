@@ -43,7 +43,7 @@
 |   `400`   |   `21:00:00:00:00`            |   ???                  | ?      | ? (3)             | *0x00*            | ? (2)             | *0x00*            | *0x00* |
 |   `425`   |   `02`                        |   ???                  | ?      | ? (3)             |
 |   `430`   |   `03:FF:FF:00`               |   ???                  | ?      | ? (7)             | *0xFF*            | ? (44)            | *0x00*            |
-|   `440`   |   `80:90:B0:00:00:78:10:13`   |   ???                  | ?      | ? (3)             | ? (61)            | ? (60)            | ? (2)             | *0x00*            | *0x78*            | *0x10*            | *0x13*            |
+| **`440`** | **`80:90:B0:00:00:78:10:13`** | **System Time**        | 1000ms | Hours             | Minutes           | Seconds           | ? (2)             | *0x00*            | *0x78*            | *0x10*            | *0x13*            |
 | **`445`** | **`00:73`**                   | **Outdoor Temp**       | 1000ms | 0x00/?            | **Out. Temp**     |
 |   `450`   |   `00:0A:00`                  |   ???                  | ?      | ? (2)             | *0x0A*            | ? (5)             |
 | **`500`** |   `00:5C`                     | **Voltage**            | 1500ms | *0x00*            | **Volt**          |
@@ -149,7 +149,12 @@ Coolant: **0x28** = 38 - _40_ = **-2 °C**
 *Byte 1*: Always `0x00`  
 *Byte 2*: LED Brightness from 0x01 to 0xFF. 0x00 is off / day mode (Instrument at full Brightness)  
 
+## 0x440 Time
+*Byte 1*: Hours  
+*Byte 2*: Minutes  
+*Byte 3*: Seconds / 4  
 
+| **`440`** | **`80:90:B0:00:00:78:10:13`** | **System Time**     
 ## 0x260
 Seams to be TurnSignal control  
 
