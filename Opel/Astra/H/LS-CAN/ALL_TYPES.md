@@ -14,7 +14,7 @@
 |   `11A`   |   `C0:00:40:80:01:00:00`      |   ???                  |~1500ms | *0xC0*            | *0x00*            | *0x40*            | ? (2)             | *0x01*            | *0x00*            | *0x00*            |
 | **`130`** | **`00:13:A6:00:00:00:00`**    | **Fuel Injection**     | ~200ms | ? (4)             | **Fuel**          | **Fuel**          | *0x00*            | *0x00*            | *0x00*            | *0x00*            |
 |   `135`   |   `3C:06:61:D0`               |   ???                  | ?      | ? (3)             | ? (2)             | *0x61*            | *0xD0*            |
-|   `145`   |   `20:00:01:28:00:04:00:00`   | Engine                 |  100ms | Status            | Status            | Status            | **Coolant**       | Status            | *0x04*            | *0x00*            | *0x00*            |
+|   `145`   |   `20:00:01:28:00:04:00:00`   | Engine                 |  100ms | Status            | Status            | Status            | **Coolant**       | Status            | **CruseControl**            | *0x00*            | *0x00*            |
 |   `155`   |   `00:20`                     |   ???                  |  100ms | *0x00*            | ? (18)            |
 |   `160`   |   `02:10:C8:03`               |   ???                  | ?      | *0x02*            | ? (3)             | *0xC8*            | *0x03*            |
 |   `170`   |   `20:00:00:00`               |   ???                  | ?      | ? (8)             | ? (2)             | 0x03=KeyIn             | *0x00*            |
@@ -127,7 +127,9 @@ Byte 5:
 * `0x00`: Engine off  
 * `0xA0`: Engine running  
 
-Byte 6: Always `0x04`  
+Byte 6: 
+* `0x04`: Cruisecontrol inactive 
+* `0x06`: Cruisecontrol active
 
 Byte 7+8: Always `0x00`  
 Example: `20:00:01:26:00:04:00:00`  
