@@ -6,10 +6,12 @@
 | `188` | `46:0A:F3:62:F6:D4` | Distance | *0x46* | IGN 00/0A | 2B\*1.5748=cm¹ | <- | 2B\*1.5748=cm¹ | <- | - |
 | `682` | `46:01:75` | Sensor Temp | *0x46* | *0x01* | /2-40=°C² | - | - | - | - |
 | `683` | `46:01:76` | Display Temp | *0x46* | *0x01* | /2-40=°C³ | - | - | - | - |
+| `68C` | `46:01:6B` | Fuel Level | *0x46* | *0x01* | 94-(X/2)=l⁴ | - | - | - | - |
 
 ¹ The two Distance Values in Byte 4+5 and 6+7 might be different wheels as they slightly differ while driving.  
 ² Outdoor Temperature reported by sensor  
 ³ Outdoor Temperature shown on display  
+⁴ Gas tank level, calculation depends on sensor, sometimes inverted
 
 
 ## Engine Data
