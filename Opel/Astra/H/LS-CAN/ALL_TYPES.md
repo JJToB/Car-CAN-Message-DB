@@ -38,7 +38,7 @@
 |   `350`   |   `02:01:78:00`               |   ???                  | ?      | ? (14)            | ? (2)             | ? (54)            | ? (3)             |
 |   `360`   |   `00:00:40`                  | Clutch                 | ?      | *0x00*            | *0x00*            | **Clutch**        |
 |   `370`   |   `20:02:00:00:00:00:00:00`   | CheckControl?          | ?      | *0x20*            | 0x03=Washwater    | *0x00*            | *0x00*            | *0x00*            | *0x00*            | *0x00*            | *0x00*            |
-|   `375`   |   `00:A0`                     |   ???                  | ?      | *0x00*            | ? (103)           |
+|   `375`   |   `00:A0`                     |   **Fuel level**       | 40ms   | *0x00*            | **Fuel**          |
 |   `380`   |   `00`                        |   ???                  | ?      | *0x00*            |
 |   `400`   |   `21:00:00:00:00`            |   ???                  | ?      | ? (3)             | *0x00*            | ? (2)             | *0x00*            | *0x00* |
 |   `425`   |   `02`                        |   ???                  | ?      | ? (3)             |
@@ -150,6 +150,13 @@ Coolant: **0x28** = 38 - _40_ = **-2 °C**
 ## 0x235 LED Brightness
 *Byte 1*: Always `0x00`  
 *Byte 2*: LED Brightness from 0x01 to 0xFF. 0x00 is off / day mode (Instrument at full Brightness)  
+
+
+## 0x375 Fuel Level
+*Byte 1*: Always `0x00`  
+*Byte 2*: Fuel Level, value depends on Sensor  
+Example: `00:48`  
+Fuel: **0x48** = 94 - ( _101_ / 2 ) = **43.5l**  
 
 ## 0x440 Time
 *Byte 1*: Hours  
