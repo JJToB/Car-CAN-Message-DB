@@ -155,8 +155,8 @@ Coolant: **0x28** = 38 - _40_ = **-2 °C**
 ## 0x375 Fuel Level
 *Byte 1*: Always `0x00`  
 *Byte 2*: Fuel Level, value depends on Sensor  
-Example: `00:48`  
-Fuel: **0x48** = 94 - ( _101_ / 2 ) = **43.5l**  
+Example: `00:A0`  
+Fuel: **0xA0** = 94 - ( _160_ / 2 ) = **14.0l**  
 
 ## 0x440 Time
 *Byte 1*: Hours  
