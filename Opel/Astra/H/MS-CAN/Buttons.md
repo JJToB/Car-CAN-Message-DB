@@ -1,6 +1,6 @@
 
 
-## Radio buttons
+# Radio buttons
 ##### Tested for CD30, CD70 and DVD90
 
 | Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
@@ -32,12 +32,12 @@
 | `...` | ... |
 | `0x39`| Num 9
 
-## Steering wheel buttons
+# Steering wheel buttons
 
 | Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
 | ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | `206` | `00:91:00` | release | *0x00* | Button-ID | Hold Time | - | - | - | - | - |
-| `206` | `01:91:00` | presse | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
+| `206` | `01:91:00` | press | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
 | `206` | `08:91:00` | knob turn | *0x08* | Button-ID | *0x01* - UP, *0xFF* - DOWN | - | - | - | - | - |
 
 ## Button-IDs
@@ -51,3 +51,20 @@
 | `0x91` | Right Up Button (Next) |
 | `0x92` | Right Down Button (Prev) |
 | `0x93` | Right Knob (Volume) |
+
+
+
+# AC Controller knobs
+
+| Address | Data | Function | Byte1 | Byte2 | Byte3 | Byte4 | Byte5 | Byte6 | Byte7 | Byte8 |
+| ------- | ---- | -------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| `208` | `01:17:00` | press | *0x01* | Button-ID | Increments when hold | - | - | - | - | - |
+| `208` | `00:17:00` | release | *0x00* | Button-ID | Hold Time | - | - | - | - | - |
+| `208` | `08:16:01` | knob turn | *0x08* | Button-ID | *0x01* - UP, *0xFF* - DOWN | - | - | - | - | - |
+
+## Button-IDs
+
+| Button-ID | Button Description |
+| --------- | ------------------ |
+| `0x16` | Center Knob |
+| `0x17` | Center Knob Button |
