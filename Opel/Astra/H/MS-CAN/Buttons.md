@@ -47,7 +47,7 @@
 | `0x81` | Left Up Button |
 | `0x82` | Left Down Button |
 | `0x83` | Left Knob |
-| `0x83` | Left Knob Button|
+| `0x84` | Left Knob Button (Press) |
 | `0x91` | Right Up Button (Next) |
 | `0x92` | Right Down Button (Prev) |
 | `0x93` | Right Knob (Volume) |
